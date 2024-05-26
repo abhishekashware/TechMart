@@ -1,0 +1,23 @@
+.service-item{
+    padding: 13px 13px;
+    width: 200px;
+    border-radius: 4px;
+}
+
+.services-icon{
+    background-color: rgb(36, 33, 54);
+    padding: 10px;
+    border-radius: 100%;
+}
+
+.service-container{
+    display:flex;
+    font-size: 0.9rem;
+    padding-top: 30px;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+}

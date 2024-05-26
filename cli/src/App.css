@@ -1,0 +1,479 @@
+button{
+    margin-top: 20px;
+    padding:10px;
+    border-radius: 4px;
+}
+
+
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding:1rem;
+    position: fixed;
+    background-color: white;
+    width: 95vw;
+    z-index: 10;
+    top: 0;
+    align-items: center;
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+
+.nav__menu{
+    display: none;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav ul{
+list-style: none;
+display: flex;
+gap: 1.5rem;
+font-size:13px;
+}
+
+.banner h2{
+    line-height: 28px;
+    margin-top: 20px;
+}
+
+.banner .desc{
+margin-top: 20px;
+}
+
+.banner button{
+    background-color: blue;
+}
+
+.banner button:hover{
+    background-color: black;
+}
+
+.clock button{
+    background-color: white;
+   color: black;
+}
+.clock button:hover{
+    background-color: lightblue;
+}
+.hleft{
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.badge{
+    position: absolute;
+    top: 15%;
+    right: -3%;
+    width: 13px;
+    height: 13px;
+    content: "";
+    background-color: black;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 10;
+}
+
+.nav__active{
+    font-weight: 900 !important;
+}
+
+.banner{
+    padding: 2rem;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: rgb(212, 223, 233);
+}
+
+.banner-image{
+    width: 400px;
+    height: 400px;
+}
+
+
+.nav__item{
+    cursor: pointer;    
+}
+
+.resp-padding{
+padding-left: 3vw;
+padding-right: 3vw;
+}
+
+
+  
+
+.flex-column{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap:10px;
+    flex-direction: column;
+}
+.flex-column span{
+    font-size: small;
+    
+    cursor: pointer;
+    font-weight: 100;
+}
+
+.custom-scrollbar {
+    /* Set overflow to hidden to hide the default scrollbar */
+    overflow: auto;
+  }
+  
+  /* Style the custom scrollbar for WebKit browsers (Chrome, Safari) */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 5px; /* Width of the scrollbar */
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the thumb */
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Color of the track */
+  }
+
+.limited-offer{
+    align-items: flex-start;
+    color: white;
+    flex-direction: column;
+   padding: 20px 6vw;
+    background-color: #091a36;
+    margin-top: 10px;
+}
+
+@media only screen and (max-width:550px) {
+    .nav__menu{
+        display: block;
+    }
+    .nav__item{
+        display: none;
+    }
+    .limited-offer{
+       align-items: center;
+    }
+    .limited-offer div{
+        align-items: center;
+     }
+     .limited-offer div img{
+        display: none;
+     }
+}
+
+
+.shop-head{
+color: white;
+height: 300px;
+background: url('./assets/product-head.jpg') no-repeat center center ;
+background-size: cover;
+ }
+
+.shop-inner{
+    justify-content:space-around;
+    margin-top:50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+    padding-left: 3vw;
+    padding-right: 3vw;
+ }
+ .shop select{
+    width: 150px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: rgb(9, 26, 54);
+    cursor: pointer;
+ }
+ .shop select option{
+    padding: 10px;
+ }
+
+.search-input{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex:1;
+    max-width: 400px;
+    border: 1px solid black;
+    padding: 5px 10px 5px 5px;
+    border-radius: 10px;
+} 
+
+.search-input input{
+    background-color: white;
+    outline: none;
+    border: none;
+    color: black;
+} 
+
+.shop input{
+    padding: 5px 10px;
+    border:none;
+    outline: none;
+    width: 100%;
+    min-width: 80px;
+    color: black;
+    background-color: white;
+ }
+
+.product-title button{
+    margin-top:50px;
+    font-size:14px;
+    background-color:rgb(9, 26, 54);
+}
+
+.product-title button:hover{
+    background-color:black;
+    color: white;
+}
+.prod-detail-img{
+    width: 400px;
+    height: 400px;
+    cursor: pointer;
+}
+
+.prod-desc{
+    font-weight:300;
+    font-size:15px;
+    margin-top:30px;
+    color: gray;
+}
+
+.footer{
+    align-items: flex-start;
+    color: white;
+    justify-content:space-between;
+    padding: 20px 6vw;
+    background-color: #091a36;
+    margin-top: 10px;
+}
+
+.review-rating{
+    color: orange;
+    font-weight: medium;
+}
+
+
+.cart-main{
+    padding: 10px 6vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cart-main table{
+    width: 100%;
+    min-width: 330px;
+    border-collapse: collapse;
+}
+
+.cart-main thead,tr{
+   border-bottom: 1px solid rgb(196, 195, 195);
+}
+
+.cart-main tbody{
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+.cart-main th{
+    text-align: left;
+    font-weight: 800;
+}
+.cart-main th,td{
+
+    padding: 10px 20px;
+}
+
+
+.cart-main img{
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+}
+
+.cart-p2{
+    width: 200px;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    height: auto;
+}
+.cart-p2 button{
+   background-color: rgb(9, 26, 54);
+   font-size: 13px;
+}
+
+.cart-p2 button:hover{
+    background-color: black;
+    font-size: 13px;
+ }
+
+@media only screen and (max-width: 500px) {
+    tr{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    th, td {
+      
+      width: auto;
+    }
+
+  }
+
+
+.login-card{
+    padding:40px 20px;
+    max-width: 400px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(9, 26, 54);
+    border-radius: 10px;
+    gap: 20px;
+}
+
+.login-card input{
+    padding: 10px 10px;
+    border-radius: 7px;
+    border: none;
+    color: black;
+    width: 90%;
+    background-color: white;
+}
+
+.login-card input::placeholder {
+    color: gray;
+}
+.login-card button{
+    background-color: white;
+    color: black;
+}
+
+
+.register-card{
+    padding:40px 20px;
+    max-width: 400px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(9, 26, 54);
+    border-radius: 10px;
+    gap: 20px;
+}
+
+.register-card input{
+    padding: 10px 10px;
+    border-radius: 7px;
+    border: none;
+    color: black;
+    width: 90%;
+    background-color: white;
+}
+
+.register-card input[type="file"]{
+    background-color: #091a36;
+    color: white;
+    cursor: pointer;
+}
+
+.register-card button{
+    background-color: white;
+    color: black;
+}
+
+
+.checkout-card{
+    padding:20px;
+    max-width: 350px;
+    width: 100%;
+    background-color: rgb(9, 26, 54);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: 300;
+    height: fit-content;
+}
+
+.checkout-card button{
+   color: black;
+   background-color: white;
+   font-weight: 600;
+}
+
+.billing-inf{
+flex: 1;
+display: flex;
+padding: 0px 50px;
+flex-direction: column;
+gap: 10px;
+}
+
+
+.billing-inf input{
+background-color: white;
+outline: none;
+border: 1px solid grey;
+border-radius: 5px;
+padding: 10px 20px;
+color: black;
+}
+.billing-inf input::placeholder{
+    color: gray;
+}
+.checkout-card .row{
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   color: white;
+}
+
+.profile-container .profile-dropdown{
+position: relative;
+}
+
+
+.profile-container .profile-dropdown button{
+    border: none;
+    border-radius: 0px;
+    margin: 0;
+    background-color: sandybrown;
+    position: absolute;
+    font-size: 10px;
+    padding: 10px;
+}
+
+.success-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(88, 203, 88);
+    border-radius: 30px;
+    width: 400px;
+    height: 300px;
+    color: white;
+}
+
+.failed-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(233, 75, 75);
+    border-radius: 30px;
+    width: 400px;
+    height: 300px;
+    color: white;
+}

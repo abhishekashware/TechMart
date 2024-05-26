@@ -1,0 +1,26 @@
+.product-image{
+    width: 300px;
+    height: 300px;
+}
+.product-image:hover{
+    scale: 0.9;
+    width: 300px;
+    height: 300px;
+}
+
+.product-type{
+    font-size: 0.8rem;
+}
+
+.product-title{
+    font-size: large;
+    font-weight: bold;
+}
+
+.product-price{
+    font-size: 15px;
+}
+
+.add-button:active{
+scale: 1.2;
+}
