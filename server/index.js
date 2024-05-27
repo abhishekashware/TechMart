@@ -53,6 +53,6 @@ return res.status(500).json({
 })
 });
 
-app.listen(process.env.PORT || 3000,()=>{
+app.listen(process.env.VITE_PORT || 3000,()=>{
 console.log("started server");
 })
