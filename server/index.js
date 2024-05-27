@@ -3,13 +3,14 @@ const config=dotenv.config();
 const express=require('express');
 const cors = require('cors');
 const app=express();
+const path=require('path');
 const stripe=require('stripe')(process.env.STRIPE_API_KEY);
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-
+app.use(express.static(path.join(__dirname,'cli/dist')))
 
 app.post('/payment',async (req,res)=>{
 const {products}=req.body;
