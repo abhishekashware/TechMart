@@ -40,8 +40,8 @@ if(stripProducts.length==products.length){
     let session=await stripe.checkout.sessions.create({
         line_items:stripProducts,
         mode:'payment',
-        success_url:'http://localhost:5173/success',
-        cancel_url:'http://localhost:5173/failed',
+        success_url:'https://techmartapp.netlify.app/success',
+        cancel_url:'https://techmartapp.netlify.app/failed',
         customer_email:'abhishekashware51@gmail.com'
     })
     console.log(session);
@@ -53,6 +53,6 @@ return res.status(500).json({
 })
 });
 
-app.listen(3000,()=>{
+app.listen(process.env.PORT || 3000,()=>{
 console.log("started server");
 })
