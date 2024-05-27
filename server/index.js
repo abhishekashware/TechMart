@@ -10,8 +10,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-app.use(express.static(path.join(__dirname,'cli/dist')))
-
 app.post('/payment',async (req,res)=>{
 const {products}=req.body;
 let stripProducts=[];
@@ -51,6 +49,14 @@ if(stripProducts.length==products.length){
 return res.status(500).json({
     error:'failed'
 })
+});
+
+
+app.use(express.static(path.join(__dirname, 'cli/dist')));
+
+// Serve React application for all other routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'cli/dist', 'index.html'));
 });
 
 app.listen(process.env.VITE_PORT || 3000,()=>{
