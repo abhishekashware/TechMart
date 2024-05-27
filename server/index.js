@@ -40,8 +40,8 @@ if(stripProducts.length==products.length){
     let session=await stripe.checkout.sessions.create({
         line_items:stripProducts,
         mode:'payment',
-        success_url:'https://techmartapp.netlify.app/success',
-        cancel_url:'https://techmartapp.netlify.app/failed',
+        success_url:process.env.STRIPE_SUCCESS_URL || 'https://techmart-3ql6.onrender.com/success',
+        cancel_url:process.env.STRIPE_FAILED_URL || 'https://techmart-3ql6.onrender.com/failed' ,
         customer_email:'abhishekashware51@gmail.com'
     })
     console.log(session);
