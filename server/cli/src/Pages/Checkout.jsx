@@ -17,7 +17,7 @@ const Checkout = () => {
       const headers={
         "Content-Type":"application/json"
       }
-      const response= await fetch(`${import.meta.env.VITE_SERVER_URL}/payment`,{
+      const response= await fetch(`/payment`,{
         method:"POST",
         headers,
         body:JSON.stringify(body)
