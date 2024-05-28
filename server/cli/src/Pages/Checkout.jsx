@@ -1,15 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CommonSection from '../Components/UI/CommonSection'
 import { useSelector } from 'react-redux'
 import { useForm } from 'react-hook-form';
 import axios from 'axios'
 import { loadStripe } from '@stripe/stripe-js';
+import ReactLoading from 'react-loading';
+
 const Checkout = () => {
   const totalQuantity=useSelector(s=>s.cart.totalQuantity);
   const totalAmount=useSelector(s=>s.cart.totalAmount);
   const cartItems=useSelector(s=>s.cart.cartItems);
   const {register,handleSubmit}=useForm();
+  const [loading,setLoading]=useState(false);
   const checkout=async ()=>{
+    setLoading(true);
+    try{
       const stripe = await loadStripe("pk_test_51PKeIPSIdOvrZBUz13KnDTOauREmm2OugQ0YCLERxQBAYXcPmztwgzicfGdc7fFa4P63vkllhNSPuVRWw1cmjQJZ00AEKJF1yq");
       const body={
         products:cartItems
@@ -29,6 +34,11 @@ const Checkout = () => {
       if(result.error){
       console.log(result.error);
       }
+    }
+    catch(e){
+      console.log(e);
+    }
+    setLoading(false);
   }
   return (
     <form onSubmit={handleSubmit(checkout)}>
@@ -66,7 +76,10 @@ const Checkout = () => {
           <div>Total Cost:</div>
           <div>₹{totalAmount}</div>
         </h3>
-        <button type='submit'>Place an order</button>
+        {
+          loading?(  <ReactLoading type='spin' color='white' height={50} width={50} />):
+        <button type="submit">Place an order</button>
+        }
       </div>
       </div>
     </form>
