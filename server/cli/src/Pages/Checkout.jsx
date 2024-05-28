@@ -76,10 +76,12 @@ const Checkout = () => {
           <div>Total Cost:</div>
           <div>₹{totalAmount}</div>
         </h3>
+        <div style={{display:'flex',justifyContent:'center'}}>
         {
           loading?(  <ReactLoading type='spin' color='white' height={50} width={50} />):
         <button type="submit">Place an order</button>
         }
+        </div>
       </div>
       </div>
     </form>

@@ -412,6 +412,7 @@ background-size: cover;
    color: black;
    background-color: white;
    font-weight: 600;
+   width: 100%;
 }
 
 .billing-inf{
