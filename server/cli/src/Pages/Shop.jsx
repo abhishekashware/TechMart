@@ -21,6 +21,16 @@ const Shop = () => {
     const filteredProducts=products.filter(p=>p.category===value);
     setProductsData(filteredProducts);
   }
+  const handleSorting=(e)=>{
+    const value=e.target.value;
+    if(value=="default" || value=="ascending"){
+      setProductsData(productsData.sort((p1,p2)=>p1.price-p2.price));
+      return;
+    }
+    else if(value=="descending"){
+      setProductsData(productsData.sort((p1,p2)=>p2.price-p1.price));
+    }
+  }
   const handleSearch=(e)=>{
     const value=e.target.value;
     const filteredProducts=products.filter(p=>p.category.toLowerCase().includes(value.toLowerCase())
@@ -38,7 +48,7 @@ const Shop = () => {
           <option value="watch">Watches</option>
           <option value="mobile">Mobiles</option>
         </select>
-        <select>
+        <select onChange={handleSorting}>
           <option  value="default">Sort By</option>
           <option value="ascending">Price: Low to High</option>
           <option value="descending">Price: High to Low</option>
