@@ -10,7 +10,7 @@ const Cart = () => {
   const cartItems = useSelector((s) => s.cart.cartItems);
   const totalAmount = useSelector((s) => s.cart.totalAmount);
   const deleteItem = (id) => {
-    dispatch(cartActions.deleteItem(id));
+    dispatch(cartActions.deleteItem({id,allItems:true}));
   };
   console.log(cartItems);
   return (

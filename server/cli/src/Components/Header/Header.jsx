@@ -82,13 +82,15 @@ const Header = () => {
           </Link>
         </span>
         <div className="profile-container"         
-        onMouseEnter={(e)=>setDropdown(!dropdown)}
-          onMouseLeave={(e)=>setDropdown(!dropdown)}>
+        onMouseEnter={(e)=>setDropdown(true)}
+          onMouseLeave={(e)=>setDropdown(false)}>
+        <Link to="login" style={{pointerEvents:currentUser?'none':'auto'}}>
         <img
           src={currentUser?currentUser.photoURL:UserIcon}
           style={{ width: "30px" ,height:'30px', cursor: "pointer",borderRadius:'50%',objectFit:'cover',ObjectPosition:'center center' }}
           alt="test"
         />
+        </Link>
         {dropdown && currentUser && (<div className="profile-dropdown">
           <button onClick={signOut}>Logout</button>
         </div>)}
