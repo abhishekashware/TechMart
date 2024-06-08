@@ -24,11 +24,11 @@ const Shop = () => {
   const handleSorting=(e)=>{
     const value=e.target.value;
     if(value=="default" || value=="ascending"){
-      setProductsData(productsData.sort((p1,p2)=>p1.price-p2.price));
+      setProductsData(productsData.slice().sort((p1,p2)=>p1.price-p2.price));
       return;
     }
     else if(value=="descending"){
-      setProductsData(productsData.sort((p1,p2)=>p2.price-p1.price));
+      setProductsData(productsData.slice().sort((p1,p2)=>p2.price-p1.price));
     }
   }
   const handleSearch=(e)=>{
