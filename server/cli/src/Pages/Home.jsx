@@ -36,7 +36,7 @@ const Home = () => {
   });
 
   const countDown = () => {
-    const countDownDate = new Date("Feb 5, 2024 15:37:25").getTime();
+    const countDownDate = new Date("Dec 5, 2024 15:37:25").getTime();
 
     // Update the count down every 1 second
     const x = setInterval(function () {
