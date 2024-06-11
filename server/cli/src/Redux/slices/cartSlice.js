@@ -41,6 +41,7 @@ const cartSlice=createSlice({
             state.cartItems=state.cartItems.filter(i=>{
                 if(i.id==id && i.quantity>1){
                     i.quantity=i.quantity-1;
+                    i.totalPrice=i.totalPrice-i.price;
                     return true;
                 }
                 return i.id!=id;
