@@ -10,20 +10,20 @@ const ProductCard = ({item}) => {
   const dispatch=useDispatch();
   const cartItems=useSelector(s=>s.cart.cartItems);
    const currentItemCount=useMemo(()=>{
-    const items=cartItems.filter(i=>i.id==item.id);
+    const items=cartItems.filter(i=>i._id==item._id);
     return items.length>0?items[0].quantity:0;
    },[cartItems]);
   const addItemToCart=()=>{
     dispatch(cartActions.addItem(item))
     toast.success('Product added to cart Successfully')
   }
-  const deleteItemFromCart=(id)=>{
-    dispatch(cartActions.deleteItem({id,allItems:false}))
+  const deleteItemFromCart=(_id)=>{
+    dispatch(cartActions.deleteItem({_id,allItems:false}))
     toast.success('Item removed from cart')
   }
   return (
     <div className='flex' style={{cursor:'pointer',flexDirection:'column',padding:'20px',alignItems:'flex-start'}}>
-       <NavLink to={"/shop/"+item.id}>
+       <NavLink to={"/shop/"+item._id}>
         <img src={item.imgUrl} className='product-image'/>
         </NavLink>
         <div  className='flex' style={{flexDirection:'column',alignItems:'flex-start',width:'100%'}}>
@@ -35,7 +35,7 @@ const ProductCard = ({item}) => {
             {
             currentItemCount ? (
             <>
-            <RiIndeterminateCircleFill onClick={(e)=>deleteItemFromCart(item.id)} className='add-button' size={40}/>
+            <RiIndeterminateCircleFill onClick={(e)=>deleteItemFromCart(item._id)} className='add-button' size={40}/>
             <b>{currentItemCount}</b>
             </>
             ):''

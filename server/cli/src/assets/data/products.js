@@ -29,7 +29,7 @@ import productImg25 from "../wireless-03.png";
 const products = [
  
   {
-    id: "11",
+    _id: "11",
     productName: "Apple iPhone 12 Max",
     imgUrl: productImg14,
     category: "mobile",
@@ -52,7 +52,7 @@ const products = [
   },
 
   {
-    id: "12",
+    _id: "12",
     productName: "Realme 8",
     imgUrl: productImg15,
     category: "mobile",
@@ -75,7 +75,7 @@ const products = [
   },
 
   {
-    id: "13",
+    _id: "13",
     productName: "One Plus Nord",
     imgUrl: productImg16,
     category: "mobile",
@@ -98,7 +98,7 @@ const products = [
   },
 
   {
-    id: "14",
+    _id: "14",
     productName: "Apple iPhone 13 Pro",
     imgUrl: productImg17,
     category: "mobile",
@@ -121,7 +121,7 @@ const products = [
   },
 
   {
-    id: "15",
+    _id: "15",
     productName: "Samsung Galaxy S22",
     imgUrl: productImg18,
     category: "mobile",
@@ -144,7 +144,7 @@ const products = [
   },
 
   {
-    id: "16",
+    _id: "16",
     productName: "Rolex Watch",
     imgUrl: productImg19,
     category: "watch",
@@ -167,7 +167,7 @@ const products = [
   },
 
   {
-    id: "17",
+    _id: "17",
     productName: "Timex Easy Reader Watch",
     imgUrl: productImg20,
     category: "watch",
@@ -190,7 +190,7 @@ const products = [
   },
 
   {
-    id: "18",
+    _id: "18",
     productName: "Rolex Watch",
     imgUrl: productImg21,
     category: "watch",
@@ -213,7 +213,7 @@ const products = [
   },
 
   {
-    id: "19",
+    _id: "19",
     productName: "Apple Watch",
     imgUrl: productImg22,
     category: "watch",
@@ -236,7 +236,7 @@ const products = [
   },
 
   {
-    id: "20",
+    _id: "20",
     productName: "Beat Studio Wireless",
     imgUrl: productImg23,
     category: "wireless",
@@ -259,7 +259,7 @@ const products = [
   },
 
   {
-    id: "22",
+    _id: "22",
     productName: "Beat EP Headphones",
     imgUrl: productImg25,
     category: "wireless",

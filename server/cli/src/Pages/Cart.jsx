@@ -9,8 +9,8 @@ const Cart = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((s) => s.cart.cartItems);
   const totalAmount = useSelector((s) => s.cart.totalAmount);
-  const deleteItem = (id) => {
-    dispatch(cartActions.deleteItem({id,allItems:true}));
+  const deleteItem = (_id) => {
+    dispatch(cartActions.deleteItem({_id,allItems:true}));
   };
   console.log(cartItems);
   return (
@@ -39,7 +39,7 @@ const Cart = () => {
                       <td>{i.productName}</td>
                       <td>₹{i.price}</td>
                       <td>{i.quantity}</td>
-                      <td onClick={(e) => deleteItem(i.id)}>
+                      <td onClick={(e) => deleteItem(i._id)}>
                         <RiDeleteBinLine
                           size={20}
                           style={{ cursor: "pointer" }}

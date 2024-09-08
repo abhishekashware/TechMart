@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import products from "../assets/data/products";
 import CommonSection from "../Components/UI/CommonSection";
 import ReactStars from "react-rating-stars-component";
 import Review from "../Components/UI/Review";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {cartActions} from '../Redux/slices/cartSlice'
 import { toast } from "react-toastify";
 import ReviewInput from "../Components/UI/ReviewInput";
@@ -12,7 +11,8 @@ import ReviewInput from "../Components/UI/ReviewInput";
 const ProductDetails = () => {
   const [tab,setTab]=useState("desc");
   const { id } = useParams();
-  const product = products.find((p) => p.id === id);
+  const products=useSelector(s=>s.products.products);
+  const product = products.find((p) => p._id === id);
   const dispatch=useDispatch();
   const addItemToCart=()=>{
     dispatch(cartActions.addItem(product))
