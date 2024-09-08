@@ -1,15 +1,24 @@
 import { RiSearch2Line } from '@remixicon/react'
 import React, { useEffect, useState } from 'react'
 import ProductList from '../Components/UI/ProductList';
-import products from '../assets/data/products';
 import CommonSection from '../Components/UI/CommonSection';
 import InputBox from '../Components/UI/InputBox';
+import { productActions } from '../Redux/slices/productSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Shop = () => {
   const [productsData,setProductsData]=useState([]);
-  useEffect(()=>{
+  const products=useSelector(s=>s.products.products);
+  const dispatch=useDispatch();
+  const fetchProducts=async()=>{
+    const res=await fetch('/products');
+    const data=await res.json();
+    dispatch(productActions.setProducts(data));
+  }
 
-    setProductsData(products)
+  useEffect(()=>{
+    fetchProducts();
+    setProductsData(products);
   },[]);
 
   const handleFilter=(e)=>{
