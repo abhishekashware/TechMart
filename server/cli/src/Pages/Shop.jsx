@@ -18,8 +18,11 @@ const Shop = () => {
 
   useEffect(()=>{
     fetchProducts();
-    setProductsData(products);
   },[]);
+
+  useEffect(()=>{
+    setProductsData(products);
+  },[products]);
 
   const handleFilter=(e)=>{
     const value=e.target.value;
