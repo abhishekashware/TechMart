@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import Wireless from "../assets/wireless-01.png";
 import Services from "../services/Services";
 import ProductList from "../Components/UI/ProductList";
-import products from "../assets/data/products.js";
-import Wireless03 from "../assets/wireless-03.png";
 import Clock from "../Components/UI/Clock.jsx";
+import { productActions } from "../Redux/slices/productSlice.js";
+import { useDispatch, useSelector } from "react-redux";
 const Home = () => {
   const [trendingProducts, setTrendingProducts] = useState([]);
   const [bestSaleProducts, setBestSaleProducts] = useState([]);
@@ -15,7 +15,21 @@ const Home = () => {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
 
+  const products=useSelector(s=>s.products.products);
+  const dispatch=useDispatch();
+
+  const fetchProducts=async()=>{
+    const res=await fetch('/products');
+    const data=await res.json();
+    dispatch(productActions.setProducts(data));
+  }
+
+  useEffect(()=>{
+    fetchProducts();
+  },[]);
+
   useEffect(() => {
+    
     const filteredTrendingProducts = products.filter(
       (p) => p.category == "mobile"
     );
@@ -29,7 +43,7 @@ const Home = () => {
     setTrendingProducts(filteredTrendingProducts);
     setBestSaleProducts(filteredBestSaleProducts);
     setWirelessProducts(filteredWirelessProducts);
-  }, []);
+  }, [products]);
 
   useEffect(() => {
     countDown();
